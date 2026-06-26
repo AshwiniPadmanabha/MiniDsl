@@ -1,0 +1,35 @@
+grammar com.automotive.minidsl.MiniDsl with org.eclipse.xtext.xbase.Xbase
+
+generate miniDsl "http://www.automotive.com/minidsl/MiniDsl"
+
+Model:
+    rule=Rule
+;
+
+Rule:
+    'if' condition=Condition
+    'then' thenAction=RepeatAction
+    ('otherwise' elseAction=RepeatAction)?
+    '.'
+;
+
+Condition:
+    field=Field operator=Operator value=Value
+;
+
+RepeatAction:
+    'repeat' 'name' times=INT 'times'
+;
+
+enum Field:
+    name='name' | gender='gender' | age='age'
+;
+
+enum Operator:
+    gt='>' | gte='>=' | lt='<' | lte='<=' | eq='==' | ne='!='
+;
+
+Value:
+    INT | STRING
+;
+
