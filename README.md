@@ -1,6 +1,7 @@
 MiniDsl is an Xtext project that accepts simple English-like rules to process a Person object. It parses, validates and generates a java class.
 The way to test your DSL statements end-to-end.
- * Use the existing unit tests 
+  
+  Use the existing unit tests 
  * Add your own DSL statements into test files
  * Example:
  * if age > 18 then repeat name 4 times otherwise repeat name 2 times.
